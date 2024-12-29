@@ -8,7 +8,9 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.set("layout", "layouts/main");
+app.use(express.static("public"));
 app.use(expressEjsLayouts);
+
 app.get("/", (req, res) => {
     res.render("index");
 })
