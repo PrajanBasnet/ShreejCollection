@@ -111,7 +111,7 @@ ul a {
     width: 100%;
 }
 
-#menuIcon {
+.mobileViewIcon {
     display: none;
     visibility: hidden;
 }
@@ -119,7 +119,7 @@ ul a {
 .bannerImg img {
 
     width: 100%;
-    height: auto;
+    height: 700px;
     max-width: 500px;
     min-width: 100%;
 }
@@ -127,14 +127,25 @@ ul a {
 /* Responsive Design */
 @media (max-width: 768px) {
     .visibleMenu {
-        display: flex;
+        width: 100%;
+        display: none;
         flex-direction: column;
         box-shadow: 10px 10px 5px 12px rgb(215, 221, 223);
     }
 
-    #menuIcon {
+    .mobileViewIcon {
         visibility: visible;
-        display: block;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .bannerImg img {
+
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        min-width: 100%;
     }
 
     /* Top Banner */

@@ -1,20 +1,36 @@
-console.log("Working js");
 let visibleMenu = document.querySelector(".visibleMenu");
-let mainUL = document.getElementsByTagName("ul");
-let opened = true;
-function openMenu() {
+let menuIcon = document.querySelector("#menuIcon");
+let opened = false;
+let height = window.innerHeight;
+let width = window.innerWidth;
+
+
+menuIcon.addEventListener("click", () => {
+
+
     if (opened == false) {
+
         visibleMenu.style.visibility = 'visible';
         document.querySelector(".visibleMenu").style.display = "flex";
-
-        // mainUL.style.display = "block";
-        console.log("clicekd ");
         opened = true;
+        console.log("widht", width);
     } else if (opened == true) {
-        document.querySelector(".visibleMenu").style.display = "none";
 
+        document.querySelector(".visibleMenu").style.display = "none";
         visibleMenu.style.visibility = "hidden";
         opened = false;
+        console.log("width", height);
     }
 
-}
+
+})
+
+window.addEventListener("resize", () => {
+    if (width >= 750) {
+        visibleMenu.style.visibility = 'visible';
+
+        document.querySelector(".visibleMenu").style.display = "flex";
+
+    }
+
+})
