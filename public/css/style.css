@@ -35,6 +35,15 @@
 }
 
 /* Menu */
+
+.visibleMenu {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -49,12 +58,15 @@ ul a {
 }
 
 .menu ul {
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .menu ul li {
     position: relative;
@@ -99,13 +111,37 @@ ul a {
     width: 100%;
 }
 
+#menuIcon {
+    display: none;
+    visibility: hidden;
+}
+
+.bannerImg img {
+
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    min-width: 100%;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .visibleMenu {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 10px 10px 5px 12px rgb(215, 221, 223);
+    }
+
+    #menuIcon {
+        visibility: visible;
+        display: block;
+    }
 
     /* Top Banner */
     .topBanner {
         flex-direction: column;
         align-items: center;
+        display: none;
     }
 
     .topBanner-social,
@@ -115,6 +151,9 @@ ul a {
 
     /* Menu */
     .menu ul {
+
+        transition: all 0.7s;
+
         flex-direction: column;
         align-items: flex-start;
     }
@@ -137,6 +176,7 @@ ul a {
 @media (max-width: 480px) {
 
     /* Adjust font sizes for smaller devices */
+
     .topBanner a,
     ul a {
         font-size: 14px;
@@ -187,3 +227,14 @@ ul a {
     background-color: #d0481c;
     /* Darker shade of theme color */
 }
+
+
+/* @media (min-width: 480px) {
+    .bannerImg img {
+        width: 100%;
+        height: 400px;
+        max-width: 500px;
+        min-width: 100%;
+    }
+
+} */

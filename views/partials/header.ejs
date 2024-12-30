@@ -17,26 +17,31 @@
 </div>
 
 <div class="menu">
+
+    <img src="./img/menu.svg" onclick="openMenu()" alt="" id="menuIcon" srcset="">
     <ul>
-        <li><a class="lineHover" href="#">Home</a></li>
-        <li><a class="lineHover" href="#">About</a></li>
-        <li>
-            <a class="lineHover" href="#">Store</a>
-            <ul class="tst">
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">Men</a></li>
-            </ul>
-        </li>
-        <li><a class="lineHover" href="#">Portfolio</a></li>
-        <li><a class="lineHover" href="#">Contact</a></li>
+        <div class="visibleMenu">
+            <li><a class="lineHover" href="#">Home</a></li>
+            <li><a class="lineHover" href="#">About</a></li>
+            <li>
+                <a class="lineHover" href="#">Store</a>
+                <ul class="tst">
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Men</a></li>
+                </ul>
+            </li>
+            <li><a class="lineHover" href="#">Portfolio</a></li>
+            <li><a class="lineHover" href="#">Contact</a></li>
 
 
-        <div class="search-bar">
-            <form action="/search" method="GET">
-                <input type="text" name="q" placeholder="Search..." />
-                <button type="submit">Search</button>
-            </form>
-        </div>
+            <div class="search-bar">
+                <form action="/search" method="GET">
+                    <input type="text" name="q" placeholder="Search..." />
+                    <button type="submit">Search</button>
+                </form>
+            </div>
     </ul>
 
 </div>
+</div>
+<script src="./js/script.js"></script>
