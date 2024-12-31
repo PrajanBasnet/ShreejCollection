@@ -17,14 +17,14 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--themeColor);
-    padding: 1em;
+    padding: 1px;
 }
 
 .topBanner a {
     color: var(--textColor);
     text-decoration: none;
     font-size: 17px;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.6em;
 }
 
 .topBanner-social,
@@ -32,6 +32,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
+}
+
+#social {
+    padding: 0.1em;
+    gap: 0;
+}
+
+.topBanner-social {
+    display: block;
 }
 
 /* Menu */
