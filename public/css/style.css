@@ -17,21 +17,30 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--themeColor);
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .topBanner a {
     color: var(--textColor);
     text-decoration: none;
     font-size: 17px;
-    padding: 0.5em 1em;
+    padding: 0.2em 0.8em;
 }
 
-.topBanner-social,
-.topBanner-link {
+
+.topBanner {
+    flex-direction: row;
+    align-items: center;
+}
+
+.topBanner-social {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
+
+    align-items: center;
+}
+
+#social {
+    padding: 0.2em;
 }
 
 /* Menu */
@@ -155,7 +164,11 @@ ul a {
         display: none;
     }
 
-    .topBanner-social,
+    .topBanner-social {
+        display: flex;
+        align-items: center;
+    }
+
     .topBanner-link {
         justify-content: center;
     }
@@ -187,6 +200,28 @@ ul a {
 @media (max-width: 480px) {
 
     /* Adjust font sizes for smaller devices */
+    .visibleMenu {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        box-shadow: 10px 10px 5px 12px rgb(215, 221, 223);
+        border-radius: 12px;
+    }
+
+    .mobileViewIcon {
+        visibility: visible;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .bannerImg img {
+
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        min-width: 100%;
+    }
 
     .topBanner a,
     ul a {
@@ -196,6 +231,16 @@ ul a {
 
     .menu ul li a {
         padding: 0.8rem 1rem;
+    }
+
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        padding: 0.7em;
+        /* Adjust background color */
+
     }
 }
 
