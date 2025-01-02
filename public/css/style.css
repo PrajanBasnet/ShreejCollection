@@ -1,4 +1,6 @@
 /* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -8,10 +10,25 @@
 :root {
     --themeColor: #f15922;
     --textColor: #f2f2f2;
+
+    --ff-sans: 'Popins', sans-serif;
+    --fw-light: 200;
+    --fw-normal: 400;
+    --fw-bold: 600;
+    --clr-neutral-900: hsl(234, 12%, 34%);
+    --clr-neutral-800: hsl(229, 6%, 66%);
+    --clr-neutral-100: hsl(0, 0%, 98%);
 }
+
+html {
+    line-height: 1.7;
+    color: var(--clr-neutral-800);
+}
+
 
 /* Top Banner */
 .topBanner {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -61,7 +78,7 @@ ul {
 
 ul a {
     text-decoration: none;
-    color: black;
+    color: var(--clr-neutral-900);
     font-size: 17px;
     transition: color 0.3s;
 }
@@ -285,12 +302,51 @@ ul a {
 }
 
 
-/* @media (min-width: 480px) {
-    .bannerImg img {
-        width: 100%;
-        height: 400px;
-        max-width: 500px;
-        min-width: 100%;
-    }
+/* Css for featured products */
+header {
+    text-align: center;
+}
 
-} */
+.wrapper {
+    color: var(--clr-neutral-900);
+    /* display: flex; */
+
+}
+
+.layout-flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 200px;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.col {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 1rem 0.2rem rgb(0 0 0/ 0.2);
+}
+
+.productImg {
+    display: block;
+    margin-left: 10%;
+    width: 200px;
+    height: 180px;
+}
+
+@media (max-width:700px) {
+    .card {
+        display: grid;
+    }
+}
