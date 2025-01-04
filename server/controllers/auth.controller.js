@@ -7,7 +7,7 @@ import session from "express-session";
 const sessionMiddleware = session({
     secret: "Mysecret",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 // 1day
     }
@@ -69,6 +69,7 @@ export const logout = async (req, res) => {
         if (req.session.email) {
             delete req.session.email;
             res.status(200).send("Sucessfully deleted session")
+
         } else {
             res.status(404).send("Already logged out ")
         }
@@ -77,6 +78,8 @@ export const logout = async (req, res) => {
     }
 }
 
+
 export const admin = async (req, res) => {
     res.status(200).send({ message: "Hello Customer" });
+
 }
