@@ -9,7 +9,7 @@ import session from "express-session";
 dotenv.config();
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 const app = express();
 const sessionMiddleware = session({
     secret: "Mysecret",
