@@ -5,16 +5,17 @@ import { connectDB } from "./server/config/db.js";
 import auth from "./server/routes/auth.router.js";
 import dotenv from "dotenv";
 import session from "express-session";
+import bodyParser from "body-parser";
 
 dotenv.config();
 
-
 const port = process.env.PORT || 4000;
 const app = express();
+
 const sessionMiddleware = session({
     secret: "Mysecret",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 // 1day
     }
@@ -23,8 +24,8 @@ app.set("view engine", "ejs");
 app.set("layout", "layouts/main");
 
 connectDB();
+app.use(bodyParser.json());
 app.use(express.static("public"));
-
 app.use(sessionMiddleware);
 app.use(expressEjsLayouts);
 app.use(express.json());

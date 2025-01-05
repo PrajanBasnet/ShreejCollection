@@ -308,6 +308,7 @@ header {
 }
 
 .wrapper {
+    padding: 1rem;
     color: var(--clr-neutral-900);
     /* display: flex; */
 

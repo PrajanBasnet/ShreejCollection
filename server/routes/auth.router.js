@@ -13,4 +13,7 @@ router.get("/admin", (req, res) => {
     res.render("admin", { layout: 'layouts/adminlay.ejs' });
 })
 
+router.get("/login", (req, res) => {
+    res.render("auth", { layout: 'layouts/adminlay.ejs' });
+})
 export default router;

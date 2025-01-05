@@ -7,7 +7,7 @@ import session from "express-session";
 const sessionMiddleware = session({
     secret: "Mysecret",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 // 1day
     }
@@ -36,8 +36,11 @@ export const register = async (req, res) => {
 }
 
 export const login = async (req, res) => {
-    const { email, password } = req.body;
+
     try {
+        const { email, password } = req.body;
+        console.log(password);
+        console.log(email);
         let user = await UserCredentials.findOne({ email: email });
         let checkPassword = await bcrypt.compare(password, user.password);
         if (user && checkPassword == true) {
@@ -47,6 +50,7 @@ export const login = async (req, res) => {
                     req.session.save();
                     console.log(req.session);
 
+                    res.render("admin");
                     res.status(200).json({ message: `generated  ${req.session.email}` });
                 })
             } else {
